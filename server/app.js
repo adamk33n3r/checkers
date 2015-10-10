@@ -8,11 +8,11 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var express = require('express');
-var mongoose = require('mongoose-bird')();
+//var mongoose = require('mongoose-bird')();
 var config = require('./config/environment');
 
 // Connect to MongoDB
-mongoose.connect(config.mongo.uri, config.mongo.options);
+/*mongoose.connect(config.mongo.uri, config.mongo.options);
 mongoose.connection.on('error', function(err) {
   console.error('MongoDB connection error: ' + err);
   process.exit(-1);
@@ -20,6 +20,7 @@ mongoose.connection.on('error', function(err) {
 
 // Populate databases with sample data
 if (config.seedDB) { require('./config/seed'); }
+*/
 
 // Setup server
 var app = express();
