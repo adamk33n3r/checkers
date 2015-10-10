@@ -1,2 +1,4 @@
 .container: .row: .col-md-12
-    | This is the game view.
+  .board(ng-repeat="row in board")
+    .square(ng-repeat="col in row", style="background: {{ col.color }}")&nbsp;
+  .piece(style="left: 487px; top: 202px")
