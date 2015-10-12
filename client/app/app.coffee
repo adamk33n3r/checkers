@@ -6,7 +6,8 @@ angular.module 'checkersApp', [
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ngDragDrop'
 ]
 .config ($stateProvider, $urlRouterProvider, $locationProvider) ->
   $urlRouterProvider

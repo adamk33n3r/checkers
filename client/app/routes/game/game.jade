@@ -1,4 +1,5 @@
-.container: .row: .col-md-12
-  .board(ng-repeat="row in board")
-    .square(ng-repeat="col in row", style="background: {{ col.color }}")&nbsp;
-  .piece(style="left: 487px; top: 202px")
+.container: .row: .col-md-12.board
+  .brow(ng-repeat="row in board")
+    .square(ng-repeat="sq in row", ng-style="{'background-color': '{{ sq.color }}'}", ng-model="row[sq.loc.col].piece", data-drop="sq.color==='black' && !sq.piece.color", jqyoui-droppable="{onDrop: 'onDropCallback()'}")&nbsp;
+      .piece(ng-model="row[sq.loc.col].piece", ng-show="sq.piece.color" ng-style="{'background-color': sq.piece.color}", data-drag="true", data-jqyoui-options="{revert: 'invalid'}", jqyoui-draggable="{placeholder: true, animate: false, onStart: 'infoCallback(sq.piece)'}")
+
